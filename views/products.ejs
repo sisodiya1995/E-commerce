@@ -12,13 +12,13 @@
     <header>
         <a href="/"><strong>AJIO</strong></a>
         <nav>
-            <h4>Hi <%=user.Name%></h4>
+            <h4>Hi <%=user.name%></h4>
             <% if(isAdmin){%>
-                <h4>Hi <%=user.Name%></h4>
+               
                 <a href="/users/logout"> Logout</a>
                     <a href="/users">Users</a>
                <% } else { %>
-                <h4>Hi <%=user.Name%></h4>
+                
                 <a href="/product/userWishList"><i class="fas icon fa-heart"></i></a>
                 <a href="/product/cartList"><i class="fas icon fa-shopping-cart"></i></a>
                 <a href="/users/logout">Logout</a>
