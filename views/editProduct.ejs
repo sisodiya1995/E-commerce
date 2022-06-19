@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>edit product</title>
+</head>
+<body>
+    <header>
+        <a href="/"><strong>AJIO</strong></a>
+        <nav>
+            <h4>Hi <%=user.Name%></h4>
+     <a href="/users/logout" class="login">Logout</a>
+        </nav>
+      </header>
+    <form action="/product/<%=product.id%>/edit" method="POST">
+        <input type="text" name="title" placeholder="Enter the title" value="<%=product.title%>"> <br> <br>
+        <input type="number" name="quantity" placeholder="Enter the qty" value="<%=product.quantity%>"> <br> <br>
+        <input type="number" name="price" placeholder="Enter the price" value="<%=product.price%>"> <br> <br>
+        <button type="submit" class="btn">edit product</button>
+   </form>
+</body>
+<footer>
+    &COPY;Ajio | since 1995
+  </footer>
+</html>

@@ -1,0 +1,194 @@
+*{
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+body{
+  margin-bottom: 40px;
+}
+
+header{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+nav{
+  display: flex;
+  justify-content: space-around;
+  width: 230px;
+}
+strong{
+  font-size: 50px;
+  color: #2F4254;
+}
+a{
+  text-decoration: none;
+}
+.login{
+  font-size: 20px;
+  font-weight: 600;
+  color: #A4ADB4;
+}
+figure{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.green1{
+ color: rgb(28, 197, 28);
+}
+form{
+  background-color: gray;
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 25px;
+  border-radius: 4px;
+}
+h3{
+  text-align: center;
+  margin: 25px 0;
+  font-size: 26px;
+}
+input{
+  width: 99%;
+  height: 25px;
+  border-radius: 4px;
+}
+input::placeholder{
+  padding-left: 10px;
+}
+.btn{
+  width: 100%;
+  padding: 5px 0;
+  background-color: blueviolet;
+  color: white;
+  border: none;
+  outline:none;
+  border-radius: 4px;
+  font-weight: 700;
+}
+.btn-2{
+  width: 100%;
+  padding: 5px 0;
+  background-color: red;
+  color: white;
+  border: 2px solid red;
+ font-weight: 700;
+  outline:none;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+h4{
+  color:burlywood;
+}
+
+.products{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.product{
+  margin-top: 20px;
+  position: relative;
+}
+.fa-thumbs-up{
+  position: absolute;
+  top: 20px;
+  left: 240px;
+  font-size: 20px;
+  
+}
+img{
+  border-radius: 5px;
+}
+.fa-thumbs-down{
+  position: absolute;
+  top: 50px;
+  left: 240px;
+  font-size: 20px;
+}
+.fa-heart{
+  padding: 7px 60px;
+}
+.fa-shopping-cart{
+  padding: 7px 60px;
+}
+p{
+  color: gray;
+  font-size: 18x;
+  font-weight: 500;
+}
+small{
+  color: rgb(19, 176, 19);
+  font-weight: 600;
+  font-size: 18px;
+}
+.black{
+  color: black;
+}
+.editbtn{
+  padding: 7px 60px;
+}
+.user{
+  margin: 20px 0;
+  padding-left: 20px;
+}
+.green{
+  background-color: green;
+  color: white;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 6px;
+  font-weight: 600;
+}
+.red{
+  background-color:red;
+  color: white;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+}
+.icon{
+  padding:0;
+  color: gray;
+}
+.editbtn1{
+  padding: 7px 32px;
+}
+.white{
+  color: white;
+
+}
+.navbar{
+  width: 300px;
+}
+.green{
+  background-color: rgb(23, 193, 23);
+}
+footer{
+  text-align: center;
+  padding: 15px 0px;
+  background-color: #A4ADB4;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+ margin-top: 20px;
+ bottom: 0px;
+ position: fixed;
+ width: 100%;
+
+}
+.foot{
+  position: static;
+  text-align: center;
+  padding: 15px 0px;
+  background-color: #A4ADB4;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+ margin-top: 20px;
+}

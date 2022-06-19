@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a44f9b07be.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href="/"><strong>AJIO</strong></a>
+        <nav>
+            <h4>Hi <%=user.Name%></h4>
+            <% if(user.isAdmin){%>
+                <a href="/users/logout"> Logout</a>
+                    
+               <% } else { %>
+                <a href="/product">Products</a>
+                <a href="/product/cartList"><i class="fas icon fa-shopping-cart"></i></a>
+                <a href="/users/logout">Logout</a>
+                
+               <% } %>
+           
+        </nav>
+      </header>
+    <h3><%=user.Name%> wish list</h3>
+    <section class="products">
+        <%product.forEach((p) =>{%>
+            <div class="product"><img src="/uploads/<%=p.image%>" alt="img" width="280px">
+                <p> Name : <%=p.title%></p>
+                <p> Qty : <%=p.quantity%></p>
+                <p> Price :<%=p.price%> Rs</p>
+                <p> Likes :<%=p.likes%></p>
+                <a href="/product/<%=p.id%>/del"><button class="editbtn"> <i class="fas fa-trash"></i></button></a>
+                <a href="/product/<%=p.id%>/wishtocart"><button><i class="fas fa-shopping-cart"></i></button></a>
+            </div>
+            
+        <%})%>
+    </section>
+   
+</body>
+<footer>
+    &COPY;Ajio | since 1995
+  </footer>
+</html>

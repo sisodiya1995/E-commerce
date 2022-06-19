@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a44f9b07be.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Login form</title>
+</head>
+<body>
+    <header>
+        <a href="/"><strong>AJIO</strong></a>
+        <nav>
+    
+     <a href="/users/login" class="login">Logout</a>
+        </nav>
+      </header>
+      <h3>Welcome to AJIO</h3>
+    <form action="/users/login" method="POST">
+        <input type="text" name="email" id="" placeholder="enter email"><br><br>
+        <input type="password" name="password" id="" placeholder="enter password"><br><br>
+         <button type="submit" class="btn">Login</button>
+          <button class="btn-2 red"><a href="/auth/google" class="white" > <i class="fab white fa-google"></i> Sign in  with Google</a> </button>
+          <button class="btn-2 green"><a href="/auth/github" > <i class="fab fa-github"></i> Sign in with Github</a> </button>
+    </form>
+</body>
+<footer>
+    &COPY;Ajio | since 1995
+  </footer>
+</html>

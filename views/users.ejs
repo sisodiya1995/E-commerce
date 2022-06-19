@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href="/"><strong>AJIO</strong></a>
+        <nav>
+            <h4>Hi <%=user.Name%></h4>
+            <% if(user.isAdmin){%>
+                <a href="/users/logout"> Logout</a>
+                    
+               <% } else { %>
+                <a href="/users/logout">Logout</a>
+               <% } %>
+           
+        </nav>
+      </header>
+      <h3>All Users List</h3>
+    <%users.forEach((user) => {%>
+     <div class="user">
+        <% if(user.isAdmin === false){%>
+           
+                <p>User Name : <%=user.Name%></p>
+                <p>Email : <%=user.email%></p>
+                <p>City : <%=user.city%></p>
+                <a href="/users/<%=user.id%>/block"><button class="red">Block</button></a>
+                <a href="/users/<%=user.id%>/Unblock"><button class="green">Unblock</button></a>
+            
+            
+       <% }%>
+         </div>
+    <%})%>
+</body>
+<footer>
+    &COPY;Ajio | since 1995
+  </footer>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a44f9b07be.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Cart Page</title>
+</head>
+<body>
+    <header>
+        <a href="/"><strong>AJIO</strong></a>
+        <nav>
+            <h4>Hi <%=user.Name%></h4>
+            <% if(user.isAdmin){%>
+                <a href="/users/logout"> Logout</a>
+                    
+               <% } else { %>
+                <a href="/product">Products</a>
+                <a href="/users/logout">Logout</a>
+               <% } %>
+           
+        </nav>
+      </header>
+    <h3>Cart List <%=user.Name%></h3>
+    <section class="products">
+        <%product.forEach((p) =>{%>
+            <div class="product">
+                <img src="/uploads/<%=p.image%>" alt="img" width="280px">
+                <p> Name : <%=p.title%></p>
+                <p> Price :<%=p.price%> Rs</p>
+                <p> Qty</Q>:<%=p.quantity%> </p>
+               
+                <a href="/product/<%=p.id%>/remove"><button class="editbtn1" ><i class="fas fa-trash"></i></button></a>
+                <a href="/product/<%=p.id%>/qtyinc"><button class="editbtn1" ><i class="fas fa-angle-up"></i> Qty</button></a>
+                <a href="/product/<%=p.id%>/qtydec"><button class="editbtn1" ><i class="fas fa-angle-down"></i> Qty</button></a>
+
+            </div>
+            
+        <%})%>
+          <h4>Total Price :<small class="green1"> <%=total%> Rs</small> </h4>
+    </section>
+    <footer>
+        &COPY;Ajio | since 1995
+      </footer>
+</body>
+</html>
