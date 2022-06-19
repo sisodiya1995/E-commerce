@@ -20,6 +20,7 @@ passport.use(new GitHubStrategy({
         isAdmin : false,
         isBlocked : false,
       }
+      console.log(profileData)
     User.findOne({email:profile._json.blog},(err,user) => {
         if(err) return done(err);
         if(!user) {
