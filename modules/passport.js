@@ -13,7 +13,7 @@ passport.use(new GitHubStrategy({
       console.log(profile)
      
       var profileData = {
-          Name :profile.username,
+          name :profile.username,
          password : profile.username ,
         email :profile._json.blog,
         photo :profile._json.avatar_url,
@@ -47,7 +47,7 @@ passport.use(new GoogleStrategy({
   function(accessToken, refreshToken, profile, done) {
       //console.log(profile , 'google data')
       var profileData = {
-        Name:profile._json.given_name,
+        name:profile._json.given_name,
        password : profile._json.family_name,
       email :profile._json.email,
       photo :profile._json.picture ,
@@ -77,7 +77,7 @@ passport.serializeUser((user ,done) => {
 })
 
 passport.deserializeUser(function (id,done) {
-    User.findById(id, "Name email isAdmin ",function (err,user){
+    User.findById(id, "name email isAdmin ",function (err,user){
        done(err ,user)
     })
 })

@@ -23,7 +23,7 @@ module.exports = {
 
     if (!req.user) {
       var userID = req.session && req.session.userID;
-      User.findById(userID, "Name email isAdmin", (err, user) => {
+      User.findById(userID, "name email isAdmin", (err, user) => {
         if (err) return next(err);
         req.user = user;
         res.locals.user = user;
