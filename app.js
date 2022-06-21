@@ -16,7 +16,7 @@ var auth = require('./middlewares/auth')
 var app = express();
 
 // connect to mb
-mongoose.connect("mongodb+srv://monthlytracker:dHf1yRyjifhk7SRO@cluster0.206wb.mongodb.net/?retryWrites=true&w=majority" ,(err) => {
+mongoose.connect("mongodb+srv://sisodiya-akash:akash1503@cluster0.emdve.mongodb.net/?retryWrites=true&w=majority" ,(err) => {
     console.log(err ? err :"Connected to databases")
 })
 
