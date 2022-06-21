@@ -13,7 +13,7 @@
         <a href="/"><strong>AJIO</strong></a>
         <nav>
             <h4>Hi <%=user.name%></h4>
-            <% if(isAdmin){%>
+            <% if(user.isAdmin){%>
                
                 <a href="/users/logout"> Logout</a>
                     <a href="/users">Users</a>
@@ -44,11 +44,11 @@
                 <p> Price : <small class="black"><%=product.price%> Rs</small></p>
                 <p> Likes : <small><%=product.likes%></small></p>
 
-                <% if(isAdmin){ %>
+                <% if(user.isAdmin){ %>
                     <a href="/product/<%=product.id%>/edit"><button class="editbtn"> <i class="fas fa-user-edit"></i> EDIT</button></a>
                     <a href="/product/<%=product.id%>/delete"><button class="editbtn"><i class="fas fa-trash"></i></button></a>
                     
-                <% } else if ( isAdmin == false ) { %>
+                <% } else if ( user.isAdmin == false ) { %>
                 
                 <a href="/product/<%=product.id%>/likes"><button><i class="fas fa-thumbs-up"></i></button></a>
                 <a href="/product/<%=product.id%>/dislikes"><button><i class="fas fa-thumbs-down"></i></button></a>

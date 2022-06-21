@@ -18,9 +18,9 @@ router.get('/register' ,(req ,res ,next) => {
 })
 
 router.post('/register' ,(req ,res ,next) => {
-  //console.log(req.body)
+  console.log(req.body ,"register")
   User.create(req.body ,(err ,user) => {
-    console.log(err ,user)
+    console.log(err ,user,"user-register")
     res.redirect('/users/login')
   })
 
