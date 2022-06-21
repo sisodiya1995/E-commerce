@@ -21,7 +21,7 @@ userSchema.pre('save' ,function(next) {
 
     // all admin
     let allAdmin =[
-       "vikas@gmail.com" 
+       "akash@gmail.com" 
     ];
 
     if (allAdmin.includes(this.email)) {
