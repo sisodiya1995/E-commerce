@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var User = require("../modals/user");
-var Product = require("../modals/product");
+var Products = require("../modals/product");
 var WishList = require("../modals/wishlist");
 var Cart = require("../modals/cart");
 var auth = require("../middlewares/auth");
@@ -38,7 +38,7 @@ router.post("/", upload.single("image"), (req, res) => {
   console.log(req.body);
   console.log(req.file);
   req.body.image = req.file.filename;
-  Product.create(req.body, (err, product) => {
+  Products.create(req.body, (err, product) => {
     console.log(err, product);
 
     res.redirect("/product/new");
@@ -72,7 +72,7 @@ router.get("/", (req, res) => {
     });
   }
 
-  Product.find({}, (err, products) => {
+  Products.find({}, (err, products) => {
     res.render("products", { products, isAdmin, isRegister });
 
     //console.log(err ,products)
@@ -83,14 +83,14 @@ router.get("/", (req, res) => {
 
 router.get("/:id/edit", auth.isAdmin, (req, res) => {
   var id = req.params.id;
-  Product.findById(id, (err, product) => {
+  Products.findById(id, (err, product) => {
     res.render("editProduct", { product: product });
   });
 });
 
 router.post("/:id/edit", (req, res) => {
   var id = req.params.id;
-  Product.findByIdAndUpdate(id, req.body, (err, updateProduct) => {
+  Products.findByIdAndUpdate(id, req.body, (err, updateProduct) => {
     console.log(updateProduct, "update product");
     res.redirect("/product");
   });
@@ -100,7 +100,7 @@ router.post("/:id/edit", (req, res) => {
 
 router.get("/:id/delete", auth.isAdmin, (req, res) => {
   var id = req.params.id;
-  Product.findByIdAndDelete(id, (err, delProduct) => {
+  Products.findByIdAndDelete(id, (err, delProduct) => {
     console.log(err, delProduct);
     res.redirect("/product");
   });
@@ -110,7 +110,7 @@ router.get("/:id/delete", auth.isAdmin, (req, res) => {
 
 router.get("/:id/likes", auth.isUser, (req, res) => {
   var id = req.params.id;
-  Product.findByIdAndUpdate(id, { $inc: { likes: 1 } }, (err, uplikes) => {
+  Products.findByIdAndUpdate(id, { $inc: { likes: 1 } }, (err, uplikes) => {
     console.log(uplikes, "update likes");
     res.redirect("/product");
   });
@@ -120,7 +120,7 @@ router.get("/:id/likes", auth.isUser, (req, res) => {
 
 router.get("/:id/dislikes", auth.isUser, (req, res) => {
   var id = req.params.id;
-  Product.findById(id, (err, uplikes) => {
+  Products.findById(id, (err, uplikes) => {
     if (uplikes.likes > 0) {
       Product.findByIdAndUpdate(
         id,
@@ -140,7 +140,7 @@ router.get("/:id/wishlist", auth.isUser, (req, res) => {
   var id = req.params.id;
   var userID = req.session.userID;
 
-  Product.findById(id, (err, pro) => {
+  Products.findById(id, (err, pro) => {
     var wishObj = {};
     wishObj.title = pro.title;
     //wishObj.quantity =pro.quantity;
@@ -195,7 +195,7 @@ router.get("/:id/addCart", auth.isUser, (req, res) => {
   var userID = req.session.userID;
 
   // product list to cart list route
-  Product.findById(id, (err, pro) => {
+  Products.findById(id, (err, pro) => {
     var cart = {};
     cart.title = pro.title;
     //cart.quantity =pro.quantity;
@@ -208,7 +208,7 @@ router.get("/:id/addCart", auth.isUser, (req, res) => {
     Cart.findOne({ title: pro.title }, (err, p) => {
       if (!p) {
         Cart.create(cart, (err, wishListp) => {
-          Product.findByIdAndUpdate(
+          Products.findByIdAndUpdate(
             id,
             { $inc: { quantity: -1 } },
             (err, updateqty) => {
@@ -224,7 +224,7 @@ router.get("/:id/addCart", auth.isUser, (req, res) => {
           { title: pro.title },
           { $inc: { quantity: 1 } },
           (err, up) => {
-            Product.findByIdAndUpdate(
+            Products.findByIdAndUpdate(
               id,
               { $inc: { quantity: -1 } },
               (err, updateqty) => {
