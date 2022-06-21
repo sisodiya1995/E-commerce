@@ -6,7 +6,7 @@ mongoose.plugin(slug);
 var productSchema = new schema(
   {
     title: { type: String, required: true },
-    quantity: { type: Number, required: true },
+    quantity: { type: Number, default : 1},
     likes: { type: Number, default: 0 },
     price: { type: Number, required: true },
     slug: { type: String, slug: "title" },
