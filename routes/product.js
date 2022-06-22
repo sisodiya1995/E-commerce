@@ -7,8 +7,8 @@ var Cart = require("../modals/cart");
 var auth = require("../middlewares/auth");
 var multer = require("multer");
 var path = require("path");
-
-var uploadpath = path.join(__dirname, "../public/uploads/");
+var uploadpath = path.join(__dirname, "../uploadimage");
+//var uploadpath = path.join(__dirname, "../public/uploads/");
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, uploadpath);
