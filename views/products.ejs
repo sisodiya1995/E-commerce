@@ -38,7 +38,7 @@
     <section class="products">
         <%products.forEach((product) => { %>
             <div class="product"> 
-                <img src="../<%=product.image%>" alt="img" width="280px">
+                <img src="/uploads/<%=product.image%>" alt="img" width="280px">
                 <p> Name : <%=product.title%></p>
                 <p> Qty : <%=product.quantity%></p>
                 <p> Price : <small class="black"><%=product.price%> Rs</small></p>

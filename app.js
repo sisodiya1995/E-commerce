@@ -18,7 +18,7 @@ var app = express();
 // connect to mb
 //mongodb+srv://sisodiya-akash:akash1503@cluster0.emdve.mongodb.net/?retryWrites=true&w=majority
 //mongodb+srv://adarshraj2720:Adarshraj6059@cluster0.206wb.mongodb.net/?retryWrites=true&w=majority
-mongoose.connect("mongodb+srv://adarshraj2720:Adarshraj6059@cluster0.206wb.mongodb.net/?retryWrites=true&w=majority" ,(err) => {
+mongoose.connect("mongodb+srv://arya:akash-1503@cluster0.qgc2b.mongodb.net/?retryWrites=true&w=majority" ,(err) => {
     console.log(err ? err :"Connected to databases")
 })
 
