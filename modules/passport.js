@@ -48,7 +48,7 @@ passport.use(new GoogleStrategy({
       //console.log(profile , 'google data')
       var profileData = {
         name:profile._json.given_name,
-       password : profile._json.family_name,
+       password : profile._json.given_name,
       email :profile._json.email,
       photo :profile._json.picture ,
       isAdmin : false,
